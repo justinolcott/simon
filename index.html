@@ -1,12 +1,15 @@
+<!-- my index -->
 <!DOCTYPE html>
-<html lang=""en">
+<html lang="en">
     <head>
         <meta charset="UTF-8" />
         <!--This part is for browsers to scale the viewport automatically-->
-        <meta name="viewport" content="device-width, initial-scale=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Simon</title>
         <link rel="icon" href="favicon.ico" />
+
         <link rel="stylesheet" href="main.css" />
+
         <link
             href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
             rel="stylesheet"
@@ -17,19 +20,17 @@
     <body class="bg-dark text-light">
         <!-- header, amin, and footer elements are for semantic structure-->
         <header class="container-fluid">
-            <nav class="navbar fixed-top navbar-dark"></nav>
+            <nav class="navbar fixed-top navbar-dark">
                 <a class="navbar-brand" href="#">Simon<sup>&reg;</sup></a>
-
                 <!-- Menu is an alt to ul taht represents an interaction-->
-                <menu class=""navbar-nav>
-                    <li class="navbar-nav"><a class="nav-link active" href="index.html">Home</a></li>
+                <menu class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
                     <li class="nav-item"><a class="nav-link" href="play.html">Play</a></li>
                     <li class="nav-item"><a class="nav-link" href="scores.html">Scores</a></li>
                     <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
                 </menu>
-
                 <!-- We're going to use old styling here -->
-            </nav>>
+            </nav>
         </header>
 
         <main class="container-fluid bg-secondary text-center">
@@ -37,7 +38,6 @@
                 <h1>Welcome</h1>
                 <p>Login to play</p>
                 <form method="get" action="play.html">
-                    <label for="name">Name</label>
                     <input type="text" id="name" placeholder="Your name here" />
                     <button type="submit" class="btn btn-primary">Login</button>
                 </form>
@@ -47,7 +47,6 @@
         <footer class="bg-dark text-dark text-muted">
             <div class="container-fluid">
                 <span class="text-reset">Author Name(s)</span>
-                <br />
                 <a class="text-reset" href="https://github.com/justinolcott/simon">Source</a>
             </div>
         </footer>
