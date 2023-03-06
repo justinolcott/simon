@@ -1,5 +1,5 @@
 const btnDescriptions = [
-    { file: 'sound1.mp3', hue:120 },
+    { file: 'sound1.mp3', hue: 120 },
     { file: 'sound2.mp3', hue: 0 },
     { file: 'sound3.mp3', hue: 60 },
     { file: 'sound4.mp3', hue: 240 },
@@ -12,6 +12,7 @@ class Button {
         this.sound = loadSound(description.file);
         this.paint(25);
     }
+
     paint(level) {
         const background = `hsl(${this.hue}, 100%, ${level}%)`;
         this.el.style.backgroundColor = background;
@@ -46,7 +47,7 @@ class Game {
         this.playerPlaybackPos = 0;
         this.mistakeSound = loadSound('error.mp3');
 
-        document.querySelector('.game-button').forEach((el, i) => {
+        document.querySelectorAll('.game-button').forEach((el, i) => {
             if (i < btnDescriptions.length) {
                 this.buttons.set(el.id, new Button(btnDescriptions[i], el));
             }
@@ -77,11 +78,12 @@ class Game {
             }
         }
     }
+
     async reset() {
         this.allowPlayer = false;
         this.playerPlaybackPos = 0;
         this.sequence = [];
-        this.updateScore('---');
+        this.updateScore('--');
         await this.buttonDance(1);
         this.addButton();
         await this.playSequence();
@@ -126,7 +128,7 @@ class Game {
     saveScore(score) {
         const userName = this.getPlayerName();
         let scores = [];
-        const scoresText =localStorage.getItem('scores');
+        const scoresText = localStorage.getItem('scores');
         if (scoresText) {
             scores = JSON.parse(scoresText);
         }
@@ -138,6 +140,7 @@ class Game {
     updateScores(userName, score, scores) {
         const date = new Date().toLocaleDateString();
         const newScore = { name: userName, score: score, date: date };
+
         let found = false;
         for (const [i, prevScore] of scores.entries()) {
             if (score > prevScore.score) {
